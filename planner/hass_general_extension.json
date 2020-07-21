@@ -1,0 +1,12 @@
+{
+  "type": "numeric_restriction",
+  "name": "24 Credit Minimum",
+  "min_number_credits": 24,
+  "value": {
+    "type": "regex",
+    "matches": [{
+      "key": "dept",
+      "regex": "(ARTS|LANG|LITR|GSAS|HCDE|IHSS|PHIL|STSH|WRIT|COGS|ECON|HSAS|HCDE|PSYC|STSS)"
+    }]
+  }
+}

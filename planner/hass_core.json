@@ -1,0 +1,122 @@
+{
+  "name": "HASS Core",
+  "type": "requirements",
+  "all": [{
+      "type": "numeric_restriction",
+      "name": "20 Credit Minimum (Other restrictions apply based on your major)",
+      "min_number_credits": 20,
+      "value": {
+        "type": "regex",
+        "matches": [{
+          "key": "dept",
+          "regex": "(ARTS|LANG|LITR|GSAS|HCDE|IHSS|PHIL|STSH|WRIT|COGS|ECON|HSAS|HCDE|PSYC|STSS)"
+        }]
+      }
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "1000-level courses",
+      "max_number_credits": 12,
+      "value": {
+        "type": "regex",
+        "matches": [{
+            "key": "coid",
+            "regex": "^1\d\d\d"
+          },
+          {
+            "key": "dept",
+            "regex": "(ARTS|LANG|LITR|GSAS|HCDE|IHSS|PHIL|STSH|WRIT|COGS|ECON|HSAS|HCDE|PSYC|STSS)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "AP/Transfer Credits",
+      "max_number_credits": 8,
+      "value": {
+        "type": "property",
+        "property": "transfer (TODO: give this the right name)",
+        "applies_if_assigned": true
+      }
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "P/NC",
+      "max_number_credits": 8,
+      "value": {
+        "type": "property",
+        "property": "pnc (TODO: give this the right name)",
+        "applies_if_assigned": true
+      }
+    },
+    {
+      "type": "regex",
+      "name": "4000-level course",
+      "matches": [{
+          "key": "coid",
+          "regex": "4\d\d\d"
+        },
+        {
+          "key": "dept",
+          "regex": "(ARTS|LANG|LITR|GSAS|HCDE|IHSS|PHIL|STSH|WRIT|COGS|ECON|HSAS|HCDE|PSYC|STSS)"
+        }
+      ]
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "Communications Intensive Course",
+      "min_number_credits": 1,
+      "value": {
+        "type": "requirements",
+        "all": [{
+            "type": "property",
+            "property": "commintensive (TODO: give this the right name)",
+            "applies_if_assigned": true
+          },
+          {
+            "type": "property",
+            "property": "pnc (TODO: give this the right name)",
+            "applies_if_assigned": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "Humanities",
+      "min_number_credits": 1,
+      "value": {
+        "type": "regex",
+        "matches": [{
+          "key": "dept",
+          "regex": "(ARTS|LANG|LITR|GSAS|HCDE|IHSS|PHIL|STSH|WRIT)"
+        }]
+      }
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "Social Sciences",
+      "min_number_credits": 1,
+      "value": {
+        "type": "regex",
+        "matches": [{
+          "key": "dept",
+          "regex": "(IHSS|COGS|ECON|HSAS|HCDE|PSYC|STSS)"
+        }]
+      }
+    },
+    {
+      "type": "numeric_restriction",
+      "name": "HASS Inquiry",
+      "min_number_credits": 1,
+      "value": {
+        {
+          "type": "property",
+          "property": "hassinquiry (TODO: give this the right name)",
+          "applies_if_assigned": true
+        }
+      }
+    }
+  ]
+}

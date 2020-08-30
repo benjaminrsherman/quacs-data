@@ -50,7 +50,9 @@ jobs:
 
   scrape-faculty-and-degree-requirements:
     name: Scrape faculty and degree requirements
-    runs-on: selenium/standalone-firefox
+    runs:
+        using: 'docker'
+        image: 'selenium/standalone-firefox'
     steps:
       - name: Checkout scrapers
         uses: actions/checkout@v2

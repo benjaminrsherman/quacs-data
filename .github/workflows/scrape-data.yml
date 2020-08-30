@@ -162,8 +162,8 @@ jobs:
 
       - name: Commit new data
         run: |
-            # cp courses/courses.json courses/mod.rs data
-            # cp courses/prerequisites.json data
+          # cp courses/courses.json courses/mod.rs data
+          # cp courses/prerequisites.json data
           cp faculty/faculty.json data
           # cp catalog/catalog.json data
           cp degree_requirements/ data

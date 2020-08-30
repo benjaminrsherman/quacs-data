@@ -74,10 +74,11 @@ jobs:
             wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
             tar -xvzf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
             chmod +x geckodriver
-            cp geckodriver /usr/local/bin
 
       - name: Scrape faculty
-        run: python3 scraper/faculty_directory_scraper/main.py
+        run: |
+            export PATH=".:$PATH"
+            python3 scraper/faculty_directory_scraper/main.py
 
       - name: Upload data
         uses: actions/upload-artifact@v2

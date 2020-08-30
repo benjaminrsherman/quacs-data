@@ -1,4 +1,4 @@
-name: Scrape new data
+name: Scrape data
 on:
   repository_dispatch:
     types: deploy

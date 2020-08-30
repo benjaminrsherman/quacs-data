@@ -146,7 +146,7 @@ jobs:
 
       - name: Commit new data
         run: |
-          cp degree_requirements/ data
+          cp -r degree_requirements/ data
           # cp faculty/faculty.json data
           # cp courses/courses.json courses/mod.rs data
           # cp courses/prerequisites.json data

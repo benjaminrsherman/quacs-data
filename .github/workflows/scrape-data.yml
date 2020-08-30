@@ -180,13 +180,3 @@ jobs:
 
           git commit -m "$(date -u)"
           git push --force
-
-          # - name: Deploy updated website
-          #   if: ${{ success() }}
-          #   run: |
-          #     cd data
-          #     curl -H "Accept: application/vnd.github.everest-preview+json" \
-          #         -H "Authorization: token ${{ secrets.GITHUBTOKEN }}" \
-          #         --request POST \
-          #         --data '{"event_type": "deploy"}' \
-          #         https://api.github.com/repos/quacs/quacs/dispatches

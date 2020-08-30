@@ -88,14 +88,12 @@ jobs:
         run: |
             cd degree-planner
             python3 scraper.py refresh_data
-            mkdir degree_requirements
-            mv *.json degree_requirements
 
       - name: Upload data
         uses: actions/upload-artifact@v2
         with:
           name: degree_requirements
-          path: degree_requirements
+          path: degree-planner/*.json
 
           #scrape-catalog:
           #  name: Scrape catalog
